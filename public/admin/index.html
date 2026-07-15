@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Black Maple Ink</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-ink-950 text-white font-sans min-h-screen">
+  <div class="max-w-6xl mx-auto px-5 py-10">
+    <h1 class="font-serif text-3xl font-semibold mb-2">Studio Admin</h1>
+    <p class="text-sm text-ink-500 mb-8">Bookings, consultations, and messages. Protected by admin API key.</p>
+
+    <div id="loginBox" class="glass-card rounded-2xl p-6 max-w-md">
+      <label class="form-label" for="adminKey">Admin API key</label>
+      <input id="adminKey" type="password" class="form-input" placeholder="ADMIN_API_KEY from .env" autocomplete="current-password">
+      <button id="loginBtn" type="button" class="btn-gold mt-4 px-6 py-3 rounded-full text-xs tracking-wide uppercase w-full">Unlock dashboard</button>
+      <p id="loginError" class="hidden text-red-400 text-sm mt-3"></p>
+    </div>
+
+    <div id="dash" class="hidden">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10" id="stats"></div>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button type="button" data-tab="bookings" class="tab-btn btn-gold px-4 py-2 rounded-full text-xs">Bookings</button>
+        <button type="button" data-tab="consultations" class="tab-btn btn-outline-gold px-4 py-2 rounded-full text-xs">Consultations</button>
+        <button type="button" data-tab="messages" class="tab-btn btn-outline-gold px-4 py-2 rounded-full text-xs">Messages</button>
+      </div>
+      <div class="glass-card rounded-2xl overflow-x-auto">
+        <table class="w-full text-sm text-left">
+          <thead class="text-ink-500 border-b border-white/10" id="thead"></thead>
+          <tbody id="tbody" class="divide-y divide-white/5"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="/js/config.js"></script>
+  <script src="/js/api.js"></script>
+  <script>
+    const keyInput = document.getElementById('adminKey');
+    const loginBox = document.getElementById('loginBox');
+    const dash = document.getElementById('dash');
+    const loginError = document.getElementById('loginError');
+    let key = sessionStorage.getItem('bmi_admin_key') || '';
+    let tab = 'bookings';
+
+    async function load() {
+      try {
+        const stats = await BMI_API.admin.stats(key);
+        const s = stats.data;
+        document.getElementById('stats').innerHTML = `
+          <div class="glass-card p-5 rounded-xl"><p class="text-ink-500 text-xs">Total bookings</p><p class="font-serif text-2xl mt-1">${s.bookingsTotal}</p></div>
+          <div class="glass-card p-5 rounded-xl"><p class="text-ink-500 text-xs">Confirmed</p><p class="font-serif text-2xl mt-1 text-gold-400">${s.bookingsConfirmed}</p></div>
+          <div class="glass-card p-5 rounded-xl"><p class="text-ink-500 text-xs">Pending payment</p><p class="font-serif text-2xl mt-1">${s.bookingsPending}</p></div>
+          <div class="glass-card p-5 rounded-xl"><p class="text-ink-500 text-xs">Deposit revenue (subunits)</p><p class="font-serif text-2xl mt-1">${s.revenueDeposit}</p></div>
+        `;
+        loginBox.classList.add('hidden');
+        dash.classList.remove('hidden');
+        sessionStorage.setItem('bmi_admin_key', key);
+        await loadTab();
+      } catch (e) {
+        loginError.textContent = e.message || 'Invalid key';
+        loginError.classList.remove('hidden');
+        dash.classList.add('hidden');
+        loginBox.classList.remove('hidden');
+      }
+    }
+
+    async function loadTab() {
+      const thead = document.getElementById('thead');
+      const tbody = document.getElementById('tbody');
+      if (tab === 'bookings') {
+        const res = await BMI_API.admin.bookings(key);
+        thead.innerHTML = '<tr><th class="p-3">Ref</th><th class="p-3">Client</th><th class="p-3">When</th><th class="p-3">Studio</th><th class="p-3">Status</th><th class="p-3">Action</th></tr>';
+        tbody.innerHTML = res.data.map((b) => `
+          <tr>
+            <td class="p-3 font-mono text-xs text-gold-400">${b.reference}</td>
+            <td class="p-3">${b.full_name}<br><span class="text-ink-500 text-xs">${b.email}</span></td>
+            <td class="p-3 text-xs">${b.preferred_date} ${b.preferred_time}</td>
+            <td class="p-3 text-xs">${b.site_city || ''}</td>
+            <td class="p-3 text-xs">${b.status}</td>
+            <td class="p-3">
+              <select data-id="${b.id}" class="status-select form-input py-1 text-xs">
+                ${['pending_payment','confirmed','cancelled','completed','no_show'].map((st) =>
+                  `<option value="${st}" ${b.status===st?'selected':''}>${st}</option>`).join('')}
+              </select>
+            </td>
+          </tr>`).join('') || '<tr><td class="p-4 text-ink-500" colspan="6">No bookings yet</td></tr>';
+        tbody.querySelectorAll('.status-select').forEach((sel) => {
+          sel.addEventListener('change', async () => {
+            await BMI_API.admin.updateBooking(key, sel.dataset.id, { status: sel.value });
+            load();
+          });
+        });
+      } else if (tab === 'consultations') {
+        const res = await BMI_API.admin.consultations(key);
+        thead.innerHTML = '<tr><th class="p-3">Name</th><th class="p-3">Email</th><th class="p-3">Vision</th><th class="p-3">When</th></tr>';
+        tbody.innerHTML = res.data.map((c) => `
+          <tr>
+            <td class="p-3">${c.full_name}</td>
+            <td class="p-3 text-xs">${c.email}</td>
+            <td class="p-3 text-xs text-ink-400 max-w-xs truncate">${c.vision}</td>
+            <td class="p-3 text-xs">${c.created_at}</td>
+          </tr>`).join('') || '<tr><td class="p-4" colspan="4">None</td></tr>';
+      } else {
+        const res = await BMI_API.admin.messages(key);
+        thead.innerHTML = '<tr><th class="p-3">Name</th><th class="p-3">Subject</th><th class="p-3">Message</th><th class="p-3">When</th></tr>';
+        tbody.innerHTML = res.data.map((m) => `
+          <tr>
+            <td class="p-3">${m.full_name}<br><span class="text-xs text-ink-500">${m.email}</span></td>
+            <td class="p-3 text-xs">${m.subject || ''}</td>
+            <td class="p-3 text-xs text-ink-400 max-w-sm">${m.message}</td>
+            <td class="p-3 text-xs">${m.created_at}</td>
+          </tr>`).join('') || '<tr><td class="p-4" colspan="4">None</td></tr>';
+      }
+    }
+
+    document.getElementById('loginBtn').addEventListener('click', () => {
+      key = keyInput.value.trim();
+      load();
+    });
+    document.querySelectorAll('.tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        tab = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach((b) => {
+          b.classList.toggle('btn-gold', b === btn);
+          b.classList.toggle('btn-outline-gold', b !== btn);
+        });
+        loadTab();
+      });
+    });
+    if (key) {
+      keyInput.value = key;
+      load();
+    }
+  </script>
+</body>
+</html>

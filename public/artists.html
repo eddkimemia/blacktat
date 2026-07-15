@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-CA" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo Artists | Black Maple Ink Toronto, Vancouver, Calgary</title>
+  <meta name="description" content="Meet the Black Maple Ink artists — specialists in realism, fine line, Japanese, color, and geometric work across Toronto, Vancouver, and Calgary.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blackmapleink.ca/artists.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0a0a0a">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/tailwind-config.js"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js" defer></script>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-ink-950 text-white font-sans antialiased" data-page="artists" data-root="/">
+  <div id="site-nav"></div>
+  <main id="main">
+    <header class="page-hero">
+      <div class="max-w-3xl mx-auto px-5 text-center">
+        <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">The Collective</span>
+        <div class="line-gold mx-auto mt-4 mb-6"></div>
+        <h1 class="font-serif text-4xl md:text-5xl font-semibold">Our <span class="gold-gradient">Artists</span></h1>
+        <p class="mt-5 text-ink-400 font-light">Specialists you can book by name — deposit secured before your session.</p>
+      </div>
+    </header>
+    <section class="pb-24">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="artistsGrid">
+        <p class="text-ink-500 col-span-full text-center">Loading artists…</p>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/js/config.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    (async function () {
+      const grid = document.getElementById('artistsGrid');
+      if (!grid || !window.BMI_API) return;
+      try {
+        const res = await BMI_API.getConfig();
+        const artists = res.data.artists || [];
+        const sites = res.data.sites || [];
+        const siteMap = Object.fromEntries(sites.map((s) => [s.id, s]));
+        grid.innerHTML = artists.map((a) => {
+          const site = siteMap[a.siteId];
+          return `
+            <article class="reveal glass-card rounded-2xl overflow-hidden group">
+              <img src="${a.imageUrl || ''}" alt="${a.name}" class="w-full aspect-[5/6] object-cover group-hover:scale-105 transition-transform duration-700 img-cover" loading="lazy" width="500" height="600">
+              <div class="p-5">
+                <h2 class="font-serif text-lg font-semibold">${a.name}</h2>
+                <p class="text-[11px] text-gold-400 tracking-wide2 uppercase mt-1">${a.specialty}</p>
+                <p class="text-xs text-ink-500 mt-2">${site ? site.city : 'All studios'}</p>
+                <a href="/booking.html?artist=${encodeURIComponent(a.slug)}${site ? '&site=' + site.slug : ''}" class="inline-block mt-4 text-[11px] text-gold-400 tracking-wide2 uppercase hover:text-gold-300">Book →</a>
+              </div>
+            </article>`;
+        }).join('');
+        document.querySelectorAll('.reveal').forEach((el) => el.classList.add('active'));
+      } catch (e) {
+        grid.innerHTML = '<p class="text-red-400 col-span-full text-center">Could not load artists.</p>';
+      }
+    })();
+  </script>
+</body>
+</html>

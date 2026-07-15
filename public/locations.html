@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-CA" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Locations — Toronto, Vancouver, Calgary | Black Maple Ink</title>
+  <meta name="description" content="Black Maple Ink multi-site network: luxury tattoo studios in Toronto (Queen West), Vancouver (Gastown), and Calgary downtown. Book online before you visit.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blackmapleink.ca/locations.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0a0a0a">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/tailwind-config.js"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js" defer></script>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Black Maple Ink Studio Locations",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"url":"https://blackmapleink.ca/locations/toronto.html","name":"Toronto"},
+      {"@type":"ListItem","position":2,"url":"https://blackmapleink.ca/locations/vancouver.html","name":"Vancouver"},
+      {"@type":"ListItem","position":3,"url":"https://blackmapleink.ca/locations/calgary.html","name":"Calgary"}
+    ]
+  }
+  </script>
+</head>
+<body class="bg-ink-950 text-white font-sans antialiased" data-page="locations" data-root="/">
+  <div id="site-nav"></div>
+  <main id="main">
+    <header class="page-hero">
+      <div class="max-w-3xl mx-auto px-5 text-center">
+        <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Multisite</span>
+        <div class="line-gold mx-auto mt-4 mb-6"></div>
+        <h1 class="font-serif text-4xl md:text-5xl font-semibold">Our <span class="gold-gradient">Studios</span></h1>
+        <p class="mt-5 text-ink-400 font-light">One brand. Three cities. Book the location that fits your journey.</p>
+      </div>
+    </header>
+    <section class="pb-24">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid md:grid-cols-3 gap-6" id="locationsList">
+        <p class="text-ink-500 col-span-full text-center">Loading locations…</p>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/js/config.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    (async function () {
+      const el = document.getElementById('locationsList');
+      try {
+        const res = await BMI_API.getSites();
+        el.innerHTML = res.data.map((s) => `
+          <article class="reveal glass-card-gold rounded-2xl p-8 flex flex-col">
+            <h2 class="font-serif text-2xl font-semibold">${s.city}</h2>
+            <p class="text-sm text-ink-400 mt-3 font-light">${s.street}<br>${s.city}, ${s.region} ${s.postalCode || ''}</p>
+            <a href="tel:${s.phone}" class="text-sm text-gold-400 mt-4">${s.phone || ''}</a>
+            <div class="mt-auto pt-8 flex flex-col gap-3">
+              <a href="/locations/${s.slug}.html" class="btn-outline-gold py-3 rounded-full text-[12px] tracking-luxury uppercase text-center">Studio details</a>
+              <a href="/booking.html?site=${s.slug}" class="btn-gold py-3 rounded-full text-[12px] tracking-luxury uppercase text-center">Book here</a>
+            </div>
+          </article>
+        `).join('');
+        document.querySelectorAll('.reveal').forEach((n) => n.classList.add('active'));
+      } catch (e) {
+        el.innerHTML = `
+          <a href="/locations/toronto.html" class="glass-card-gold rounded-2xl p-8">Toronto</a>
+          <a href="/locations/vancouver.html" class="glass-card-gold rounded-2xl p-8">Vancouver</a>
+          <a href="/locations/calgary.html" class="glass-card-gold rounded-2xl p-8">Calgary</a>`;
+      }
+    })();
+  </script>
+</body>
+</html>

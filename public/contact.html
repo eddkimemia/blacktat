@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-CA" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Black Maple Ink | Toronto, Vancouver, Calgary</title>
+  <meta name="description" content="Contact Black Maple Ink studios in Toronto, Vancouver, and Calgary. Questions about bookings, deposits, or custom work.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blackmapleink.ca/contact.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0a0a0a">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/tailwind-config.js"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js" defer></script>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ContactPage","name":"Contact Black Maple Ink","url":"https://blackmapleink.ca/contact.html"}
+  </script>
+</head>
+<body class="bg-ink-950 text-white font-sans antialiased" data-page="contact" data-root="/">
+  <div id="site-nav"></div>
+  <main id="main">
+    <header class="page-hero">
+      <div class="max-w-3xl mx-auto px-5 text-center">
+        <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Get in touch</span>
+        <div class="line-gold mx-auto mt-4 mb-6"></div>
+        <h1 class="font-serif text-4xl md:text-5xl font-semibold">Contact <span class="gold-gradient">Us</span></h1>
+        <p class="mt-5 text-ink-400 font-light">For appointments, use <a href="/booking.html" class="text-gold-400 hover:underline">online booking</a>. For general questions, send a message below.</p>
+      </div>
+    </header>
+    <section class="pb-24">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-10">
+        <div class="space-y-4">
+          <div class="glass-card rounded-2xl p-7">
+            <h2 class="font-serif font-semibold mb-2">HQ / Toronto</h2>
+            <p class="text-sm text-ink-400 font-light">1247 Queen Street West, Toronto, ON M6J 1J6</p>
+            <a href="tel:+14165550199" class="block text-sm text-gold-400 mt-3">+1 (416) 555-0199</a>
+            <a href="mailto:hello@blackmapleink.ca" class="block text-sm text-gold-400">hello@blackmapleink.ca</a>
+          </div>
+          <div class="glass-card rounded-2xl p-7">
+            <h2 class="font-serif font-semibold mb-2">All studios</h2>
+            <a href="/locations.html" class="text-sm text-gold-400">View Toronto, Vancouver &amp; Calgary →</a>
+          </div>
+        </div>
+        <div class="glass-card rounded-2xl p-7 md:p-10 border-gold-400/10">
+          <form id="contactForm" novalidate>
+            <div class="space-y-5">
+              <div>
+                <label for="contactName" class="form-label">Full name *</label>
+                <input id="contactName" class="form-input" required autocomplete="name">
+              </div>
+              <div>
+                <label for="contactEmail" class="form-label">Email *</label>
+                <input id="contactEmail" type="email" class="form-input" required autocomplete="email">
+              </div>
+              <div>
+                <label for="contactPhone" class="form-label">Phone</label>
+                <input id="contactPhone" type="tel" class="form-input" autocomplete="tel">
+              </div>
+              <div>
+                <label for="contactSite" class="form-label">Studio (optional)</label>
+                <select id="contactSite" class="form-input appearance-none">
+                  <option value="">Any / general</option>
+                  <option value="toronto">Toronto</option>
+                  <option value="vancouver">Vancouver</option>
+                  <option value="calgary">Calgary</option>
+                </select>
+              </div>
+              <div>
+                <label for="contactSubject" class="form-label">Subject</label>
+                <input id="contactSubject" class="form-input" placeholder="Question about…">
+              </div>
+              <div>
+                <label for="contactMessage" class="form-label">Message *</label>
+                <textarea id="contactMessage" rows="4" class="form-input resize-none" required></textarea>
+              </div>
+            </div>
+            <p id="contactError" class="hidden text-sm text-red-400 mt-4" role="alert"></p>
+            <button type="submit" id="contactSubmit" class="btn-gold w-full mt-6 py-3.5 rounded-full text-[12px] tracking-luxury uppercase">Send Message</button>
+          </form>
+          <div id="contactSuccess" class="hidden text-center py-8">
+            <span class="iconify text-4xl text-gold-400" data-icon="lucide:check"></span>
+            <h3 class="font-serif text-xl font-semibold mt-4">Message sent</h3>
+            <p class="text-sm text-ink-400 mt-2">We'll reply shortly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/js/config.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

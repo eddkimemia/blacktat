@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /booking-success.html
+Disallow: /api/
+
+Sitemap: https://blackmapleink.ca/sitemap.xml

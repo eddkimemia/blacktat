@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-CA" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo Portfolio | Black Maple Ink</title>
+  <meta name="description" content="Browse fine line, blackwork, realism, color, and Japanese tattoo portfolio pieces from Black Maple Ink artists.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blackmapleink.ca/portfolio.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0a0a0a">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/tailwind-config.js"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js" defer></script>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-ink-950 text-white font-sans antialiased" data-page="portfolio" data-root="/">
+  <div id="site-nav"></div>
+  <main id="main">
+    <header class="page-hero">
+      <div class="max-w-3xl mx-auto px-5 text-center">
+        <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Portfolio</span>
+        <div class="line-gold mx-auto mt-4 mb-6"></div>
+        <h1 class="font-serif text-4xl md:text-5xl font-semibold">Selected <span class="gold-gradient">Works</span></h1>
+      </div>
+    </header>
+    <section class="pb-24">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6">
+        <div class="flex flex-wrap justify-center gap-2 mb-10" role="tablist" aria-label="Portfolio filters">
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full text-[13px] bg-gold-400/10 text-gold-400 border border-gold-400/25 active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full text-[13px] text-ink-400 border border-white/10" data-filter="fineline" role="tab">Fine Line</button>
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full text-[13px] text-ink-400 border border-white/10" data-filter="blackwork" role="tab">Blackwork</button>
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full text-[13px] text-ink-400 border border-white/10" data-filter="realism" role="tab">Realism</button>
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full text-[13px] text-ink-400 border border-white/10" data-filter="color" role="tab">Color</button>
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full text-[13px] text-ink-400 border border-white/10" data-filter="sleeves" role="tab">Sleeves</button>
+        </div>
+        <div class="masonry">
+          <div class="masonry-item portfolio-item" data-category="sleeves">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=1200&amp;q=85" data-alt="Custom sleeve">
+              <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=600&amp;q=80" alt="Custom sleeve" class="w-full object-cover aspect-[3/4] img-cover" loading="lazy">
+            </button>
+          </div>
+          <div class="masonry-item portfolio-item" data-category="fineline">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1200&amp;q=85" data-alt="Fine line">
+              <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=600&amp;q=80" alt="Fine line" class="w-full object-cover aspect-square img-cover" loading="lazy">
+            </button>
+          </div>
+          <div class="masonry-item portfolio-item" data-category="realism">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1590246814883-57c511e3d5c0?w=1200&amp;q=85" data-alt="Portrait realism">
+              <img src="https://images.unsplash.com/photo-1590246814883-57c511e3d5c0?w=600&amp;q=80" alt="Portrait" class="w-full object-cover aspect-[4/5] img-cover" loading="lazy">
+            </button>
+          </div>
+          <div class="masonry-item portfolio-item" data-category="blackwork">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdf93?w=1200&amp;q=85" data-alt="Blackwork">
+              <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdf93?w=600&amp;q=80" alt="Blackwork" class="w-full object-cover aspect-[2/3] img-cover" loading="lazy">
+            </button>
+          </div>
+          <div class="masonry-item portfolio-item" data-category="color">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?w=1200&amp;q=85" data-alt="Color">
+              <img src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?w=600&amp;q=80" alt="Color" class="w-full object-cover aspect-[4/5] img-cover" loading="lazy">
+            </button>
+          </div>
+          <div class="masonry-item portfolio-item" data-category="fineline">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1200&amp;q=85" data-alt="Minimal fine line">
+              <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=600&amp;q=80" alt="Minimal" class="w-full object-cover aspect-[3/4] img-cover" loading="lazy">
+            </button>
+          </div>
+        </div>
+        <div class="text-center mt-14">
+          <a href="/booking.html" class="btn-gold px-10 py-4 rounded-full text-[12px] tracking-luxury uppercase">Book your piece</a>
+        </div>
+      </div>
+    </section>
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" hidden>
+      <button type="button" id="lightboxClose" class="absolute top-6 right-6 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white z-10" aria-label="Close">
+        <span class="iconify text-xl" data-icon="lucide:x"></span>
+      </button>
+      <img id="lightboxImg" src="" alt="" class="max-w-[90vw] max-h-[85vh] object-contain rounded-lg">
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/js/config.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
