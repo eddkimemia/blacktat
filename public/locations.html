@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Studio Locations — Toronto, Vancouver, Calgary | Black Maple Ink</title>
-  <meta name="description" content="Black Maple Ink multi-site network: luxury tattoo studios in Toronto (Queen West), Vancouver (Gastown), and Calgary downtown. Book online before you visit.">
+  <meta name="description" content="Black Maple Ink multi-site network: luxury tattoo studios in Toronto (Queen West), Vancouver (Gastown), and Calgary downtown. Book online before you visit. Same standards, three cities.">
+  <meta name="keywords" content="Tattoo Studio Toronto, Tattoo Studio Vancouver, Tattoo Studio Calgary, Queen West Tattoo, Gastown Tattoo, Downtown Calgary Tattoo">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://blackmapleink.ca/locations.html">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Studio Locations | Black Maple Ink">
+  <meta property="og:description" content="Toronto, Vancouver, and Calgary luxury tattoo studios — book online.">
+  <meta property="og:url" content="https://blackmapleink.ca/locations.html">
   <meta name="theme-color" content="#0a0a0a">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/js/tailwind-config.js"></script>
+  <script src="js/tailwind-config.js"></script>
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js" defer></script>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,7 +31,7 @@
   }
   </script>
 </head>
-<body class="bg-ink-950 text-white font-sans antialiased" data-page="locations" data-root="/">
+<body class="bg-ink-950 text-white font-sans antialiased" data-page="locations" data-root="">
   <div id="site-nav"></div>
   <main id="main">
     <header class="page-hero">
@@ -35,42 +39,144 @@
         <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Multisite</span>
         <div class="line-gold mx-auto mt-4 mb-6"></div>
         <h1 class="font-serif text-4xl md:text-5xl font-semibold">Our <span class="gold-gradient">Studios</span></h1>
-        <p class="mt-5 text-ink-400 font-light">One brand. Three cities. Book the location that fits your journey.</p>
+        <p class="mt-5 text-ink-400 font-light max-w-xl mx-auto">One brand. Three cities. Identical standards of hygiene, privacy, and craft — book the location that fits your journey.</p>
       </div>
     </header>
-    <section class="pb-24">
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid md:grid-cols-3 gap-6" id="locationsList">
-        <p class="text-ink-500 col-span-full text-center">Loading locations…</p>
+
+    <section class="pb-12" aria-labelledby="network-heading">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6">
+        <div class="reveal glass-card rounded-2xl p-8 md:p-10 mb-12 text-center max-w-3xl mx-auto">
+          <h2 id="network-heading" class="font-serif text-2xl font-semibold mb-3">Why a multi-city network?</h2>
+          <p class="text-sm text-ink-400 font-light leading-relaxed">Clients travel. Artists specialize. Black Maple Ink keeps a single booking system, deposit flow, and quality bar so you get the same authentic experience whether you sit in Toronto, Vancouver, or Calgary.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6" id="locationsList"></div>
+      </div>
+    </section>
+
+    <!-- Shared amenities -->
+    <section class="py-24 md:py-32 bg-ink-900/40" aria-labelledby="amenities-heading">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6">
+        <div class="text-center mb-14 reveal">
+          <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Every Location</span>
+          <div class="line-gold mx-auto mt-4 mb-6"></div>
+          <h2 id="amenities-heading" class="font-serif text-4xl md:text-5xl font-semibold">What You’ll Find <span class="gold-gradient">Everywhere</span></h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="reveal glass-card rounded-2xl p-6 text-center">
+            <p class="text-gold-400 font-serif text-3xl font-semibold mb-2">01</p>
+            <h3 class="font-serif font-semibold mb-2">Private suites</h3>
+            <p class="text-xs text-ink-500 font-light">One client, one room, full focus and privacy.</p>
+          </div>
+          <div class="reveal glass-card rounded-2xl p-6 text-center">
+            <p class="text-gold-400 font-serif text-3xl font-semibold mb-2">02</p>
+            <h3 class="font-serif font-semibold mb-2">Sterile workflow</h3>
+            <p class="text-xs text-ink-500 font-light">Hospital-grade protocols at every chair.</p>
+          </div>
+          <div class="reveal glass-card rounded-2xl p-6 text-center">
+            <p class="text-gold-400 font-serif text-3xl font-semibold mb-2">03</p>
+            <h3 class="font-serif font-semibold mb-2">Online booking</h3>
+            <p class="text-xs text-ink-500 font-light">Paystack deposit before you visit.</p>
+          </div>
+          <div class="reveal glass-card rounded-2xl p-6 text-center">
+            <p class="text-gold-400 font-serif text-3xl font-semibold mb-2">04</p>
+            <h3 class="font-serif font-semibold mb-2">Named artists</h3>
+            <p class="text-xs text-ink-500 font-light">Book specialists by portfolio and city.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel tips -->
+    <section class="py-24 md:py-32" aria-labelledby="travel-heading">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Planning Your Visit</span>
+          <div class="line-gold mt-4 mb-6"></div>
+          <h2 id="travel-heading" class="font-serif text-4xl font-semibold mb-6">Traveling for a <span class="gold-gradient">Session</span></h2>
+          <p class="text-ink-300 font-light leading-relaxed mb-6">Many clients fly or drive between cities to work with a specific artist. Because deposits and designs are handled online first, you arrive with a clear plan — not a waitlist.</p>
+          <ul class="checklist text-sm text-ink-400 font-light list-none m-0 p-0">
+            <li><span class="check">✓</span><span>Book and pay deposit at least several days before travel</span></li>
+            <li><span class="check">✓</span><span>Allow buffer time after long sessions for rest</span></li>
+            <li><span class="check">✓</span><span>Wear clothing that grants access to the tattoo area</span></li>
+            <li><span class="check">✓</span><span>Bring government ID (18+ for tattoos)</span></li>
+          </ul>
+        </div>
+        <div class="reveal image-frame">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&amp;q=80" alt="Travel planning for multi-city tattoo appointments" class="w-full aspect-[4/3] object-cover img-cover" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-ink-900/40">
+      <div class="max-w-3xl mx-auto px-5 text-center reveal">
+        <h2 class="font-serif text-4xl font-semibold mb-6">Pick a City. <span class="gold-gradient">Start Booking.</span></h2>
+        <p class="text-ink-400 font-light mb-10">Same luxury standard. Same secure deposit flow. Choose Toronto, Vancouver, or Calgary.</p>
+        <a href="booking.html" class="btn-gold px-10 py-4 rounded-full text-[12px] tracking-luxury uppercase">Book any studio</a>
       </div>
     </section>
   </main>
   <div id="site-footer"></div>
-  <script src="/js/config.js"></script>
-  <script src="/js/api.js"></script>
-  <script src="/js/components.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/static-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
   <script>
-    (async function () {
+    (function () {
       const el = document.getElementById('locationsList');
-      try {
-        const res = await BMI_API.getSites();
-        el.innerHTML = res.data.map((s) => `
-          <article class="reveal glass-card-gold rounded-2xl p-8 flex flex-col">
-            <h2 class="font-serif text-2xl font-semibold">${s.city}</h2>
-            <p class="text-sm text-ink-400 mt-3 font-light">${s.street}<br>${s.city}, ${s.region} ${s.postalCode || ''}</p>
-            <a href="tel:${s.phone}" class="text-sm text-gold-400 mt-4">${s.phone || ''}</a>
-            <div class="mt-auto pt-8 flex flex-col gap-3">
-              <a href="/locations/${s.slug}.html" class="btn-outline-gold py-3 rounded-full text-[12px] tracking-luxury uppercase text-center">Studio details</a>
-              <a href="/booking.html?site=${s.slug}" class="btn-gold py-3 rounded-full text-[12px] tracking-luxury uppercase text-center">Book here</a>
+      if (!el) return;
+      const root = document.body.dataset.root || '';
+
+      function render(sites) {
+        el.innerHTML = sites.map((s) => {
+          const img = s.image || 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80';
+          const blurb = s.blurb || s.seo_description || '';
+          const hours = s.hours || '';
+          const street = s.street || '';
+          const city = s.city || '';
+          const region = s.region || '';
+          const postal = s.postalCode || s.postal_code || '';
+          const phone = s.phone || '';
+          const slug = s.slug;
+          return `
+          <article class="reveal glass-card rounded-2xl overflow-hidden flex flex-col">
+            <img src="${img}" alt="Black Maple Ink ${city} studio exterior context" class="w-full aspect-[16/10] object-cover img-cover" loading="lazy" width="700" height="438">
+            <div class="p-7 flex flex-col flex-1">
+              <h2 class="font-serif text-2xl font-semibold">${city}</h2>
+              <p class="text-sm text-ink-400 mt-3 font-light">${street}<br>${city}, ${region} ${postal}</p>
+              ${hours ? `<p class="text-xs text-ink-500 mt-3">${hours}</p>` : ''}
+              ${blurb ? `<p class="text-sm text-ink-500 font-light mt-4 flex-1">${blurb}</p>` : '<div class="flex-1"></div>'}
+              ${phone ? `<a href="tel:${phone.replace(/[^+\d]/g,'')}" class="text-sm text-gold-400 mt-4">${phone}</a>` : ''}
+              <div class="pt-6 flex flex-col gap-3">
+                <a href="${root}locations/${slug}.html" class="btn-outline-gold py-3 rounded-full text-[12px] tracking-luxury uppercase text-center">Studio details</a>
+                <a href="${root}booking.html?site=${slug}" class="btn-gold py-3 rounded-full text-[12px] tracking-luxury uppercase text-center">Book ${city}</a>
+              </div>
             </div>
-          </article>
-        `).join('');
-        document.querySelectorAll('.reveal').forEach((n) => n.classList.add('active'));
-      } catch (e) {
-        el.innerHTML = `
-          <a href="/locations/toronto.html" class="glass-card-gold rounded-2xl p-8">Toronto</a>
-          <a href="/locations/vancouver.html" class="glass-card-gold rounded-2xl p-8">Vancouver</a>
-          <a href="/locations/calgary.html" class="glass-card-gold rounded-2xl p-8">Calgary</a>`;
+          </article>`;
+        }).join('');
+        document.querySelectorAll('#locationsList .reveal').forEach((n) => n.classList.add('active'));
+      }
+
+      const staticSites = (window.BMI_STATIC && BMI_STATIC.sites) || [];
+      render(staticSites);
+
+      if (window.BMI_API) {
+        BMI_API.getSites()
+          .then((res) => {
+            if (res.data && res.data.length) {
+              const enriched = res.data.map((s) => {
+                const st = staticSites.find((x) => x.slug === s.slug) || {};
+                return Object.assign({}, st, s, {
+                  postalCode: s.postalCode || s.postal_code || st.postalCode,
+                  image: st.image,
+                  blurb: st.blurb,
+                  hours: st.hours,
+                });
+              });
+              render(enriched);
+            }
+          })
+          .catch(function () { /* keep static */ });
       }
     })();
   </script>

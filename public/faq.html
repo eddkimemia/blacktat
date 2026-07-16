@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ — Deposits, Booking &amp; Aftercare | Black Maple Ink</title>
-  <meta name="description" content="Answers about pain, pricing, Paystack deposits, cancellation policy, prep, and walk-ins at Black Maple Ink multi-city studios.">
+  <title>FAQ — Deposits, Booking, Aftercare &amp; Hygiene | Black Maple Ink</title>
+  <meta name="description" content="Answers about pain, pricing, Paystack deposits, cancellation policy, prep, walk-ins, hygiene, and aftercare at Black Maple Ink multi-city studios in Toronto, Vancouver, and Calgary.">
+  <meta name="keywords" content="Tattoo FAQ, Tattoo Deposit Policy, Tattoo Aftercare, Paystack Tattoo Booking, Tattoo Hygiene Questions">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://blackmapleink.ca/faq.html">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0a0a0a">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/js/tailwind-config.js"></script>
+  <script src="js/tailwind-config.js"></script>
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js" defer></script>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -21,72 +22,166 @@
     "mainEntity": [
       {"@type":"Question","name":"Does it hurt?","acceptedAnswer":{"@type":"Answer","text":"Pain varies by placement. Most clients describe a scratching sensation. Numbing options can be discussed during consultation."}},
       {"@type":"Question","name":"How do deposits work?","acceptedAnswer":{"@type":"Answer","text":"A non-refundable deposit paid online via Paystack secures your appointment before you visit and applies to the final cost."}},
-      {"@type":"Question","name":"Do you accept walk-ins?","acceptedAnswer":{"@type":"Answer","text":"We primarily work by appointment. Book and pay your deposit online to guarantee your preferred artist and time."}}
+      {"@type":"Question","name":"Do you accept walk-ins?","acceptedAnswer":{"@type":"Answer","text":"We primarily work by appointment. Book and pay your deposit online to guarantee your preferred artist and time."}},
+      {"@type":"Question","name":"What is the cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"We require 48 hours notice for cancellations or rescheduling. Less notice forfeits the deposit."}},
+      {"@type":"Question","name":"How should I prepare for my tattoo?","acceptedAnswer":{"@type":"Answer","text":"Stay hydrated, eat well, avoid alcohol for 24 hours, and wear clothing that allows access to the tattoo area."}}
     ]
   }
   </script>
 </head>
-<body class="bg-ink-950 text-white font-sans antialiased" data-page="faq" data-root="/">
+<body class="bg-ink-950 text-white font-sans antialiased" data-page="faq" data-root="">
   <div id="site-nav"></div>
   <main id="main">
     <header class="page-hero">
       <div class="max-w-3xl mx-auto px-5 text-center">
-        <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Help</span>
+        <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Help Centre</span>
         <div class="line-gold mx-auto mt-4 mb-6"></div>
         <h1 class="font-serif text-4xl md:text-5xl font-semibold">Frequently <span class="gold-gradient">Asked</span></h1>
+        <p class="mt-5 text-ink-400 font-light max-w-xl mx-auto">Straight answers about booking, deposits, hygiene, pricing, and aftercare — so you can trust the process before you visit any Black Maple Ink studio.</p>
       </div>
     </header>
-    <section class="pb-24">
+
+    <!-- Category intro -->
+    <section class="pb-12">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid sm:grid-cols-3 gap-4">
+        <div class="reveal glass-card rounded-xl p-5 text-center">
+          <h2 class="font-serif font-semibold text-sm">Booking &amp; deposits</h2>
+          <p class="text-xs text-ink-500 mt-2 font-light">Paystack, slots, policies</p>
+        </div>
+        <div class="reveal glass-card rounded-xl p-5 text-center">
+          <h2 class="font-serif font-semibold text-sm">Session day</h2>
+          <p class="text-xs text-ink-500 mt-2 font-light">Pain, prep, what to expect</p>
+        </div>
+        <div class="reveal glass-card rounded-xl p-5 text-center">
+          <h2 class="font-serif font-semibold text-sm">Healing &amp; care</h2>
+          <p class="text-xs text-ink-500 mt-2 font-light">Aftercare and longevity</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24" aria-labelledby="faq-list">
       <div class="max-w-3xl mx-auto px-5 sm:px-6 space-y-3">
+        <h2 id="faq-list" class="sr-only">Questions and answers</h2>
+
         <div class="faq-item glass-card rounded-xl overflow-hidden">
           <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">
             <span class="font-serif font-semibold text-base md:text-lg pr-4">Does it hurt?</span>
             <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
           </button>
-          <div id="faq-1" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">Pain levels vary by placement and personal tolerance. Most clients describe a scratching sensation. Private suites and experienced artists help minimize discomfort.</p></div></div>
+          <div id="faq-1" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">Pain levels vary by placement and personal tolerance. Most clients describe a scratching or vibrating sensation. Private suites, experienced artists, and optional numbing (discussed in consultation) help minimize discomfort.</p></div></div>
         </div>
+
         <div class="faq-item glass-card rounded-xl overflow-hidden">
           <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-2">
             <span class="font-serif font-semibold text-base md:text-lg pr-4">How much does it cost?</span>
             <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
           </button>
-          <div id="faq-2" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">Pricing depends on size, complexity, placement, and artist. Minimum is typically $150 CAD. Transparent quotes during consultation — no surprises.</p></div></div>
+          <div id="faq-2" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">Pricing depends on size, complexity, placement, and artist. Minimum is typically $150 CAD. Transparent quotes are given during consultation — no hidden add-ons. Starting ranges are listed on our Services page.</p></div></div>
         </div>
+
         <div class="faq-item glass-card rounded-xl overflow-hidden">
           <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-3">
             <span class="font-serif font-semibold text-base md:text-lg pr-4">How do deposits &amp; Paystack work?</span>
             <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
           </button>
-          <div id="faq-3" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">You select a studio, date, and time online, then pay a non-refundable deposit through Paystack's secure checkout. Your appointment is confirmed only after successful payment — before you visit the studio. The deposit applies to your final balance.</p></div></div>
+          <div id="faq-3" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">You select a studio, date, and time online, then pay a non-refundable deposit through Paystack’s secure checkout. Your appointment is confirmed only after successful payment — before you visit the studio. The deposit applies to your final balance. We never store full card numbers.</p></div></div>
         </div>
+
         <div class="faq-item glass-card rounded-xl overflow-hidden">
           <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-4">
             <span class="font-serif font-semibold text-base md:text-lg pr-4">What is the cancellation policy?</span>
             <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
           </button>
-          <div id="faq-4" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">We require 48 hours notice for cancellations or rescheduling. Less notice forfeits the deposit. No-shows may be charged the session minimum.</p></div></div>
+          <div id="faq-4" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">We require 48 hours notice for cancellations or rescheduling. Less notice forfeits the deposit. No-shows may be charged the session minimum. This policy protects artists’ blocked time and clients who are waiting for slots.</p></div></div>
         </div>
+
         <div class="faq-item glass-card rounded-xl overflow-hidden">
           <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-5">
             <span class="font-serif font-semibold text-base md:text-lg pr-4">Do you accept walk-ins?</span>
             <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
           </button>
-          <div id="faq-5" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">We primarily work by appointment so each client receives dedicated time. Booking and paying your deposit online is the best way to secure your preferred artist.</p></div></div>
+          <div id="faq-5" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">We primarily work by appointment so each client receives dedicated private-suite time. Booking and paying your deposit online is the best way to secure your preferred artist and guarantee a prepared room.</p></div></div>
         </div>
+
         <div class="faq-item glass-card rounded-xl overflow-hidden">
           <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-6">
             <span class="font-serif font-semibold text-base md:text-lg pr-4">How should I prepare?</span>
             <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
           </button>
-          <div id="faq-6" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">Stay hydrated, eat well, avoid alcohol for 24 hours, and wear clothing that allows access to the tattoo area. We send a prep guide after confirmed booking.</p></div></div>
+          <div id="faq-6" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">Stay hydrated, eat a solid meal, avoid alcohol and blood-thinning substances for 24 hours when medically appropriate, and wear clothing that allows access to the tattoo area. We send a prep guide after confirmed booking. Bring government ID (18+ for tattoos).</p></div></div>
+        </div>
+
+        <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-7">
+            <span class="font-serif font-semibold text-base md:text-lg pr-4">What hygiene standards do you follow?</span>
+            <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
+          </button>
+          <div id="faq-7" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">Every studio uses single-use needles and tubes, medical-grade barriers, surface disinfection between clients, and autoclave sterilization for reusable tools. Private suites reduce cross-traffic. You are welcome to ask any artist about the workflow before your session begins.</p></div></div>
+        </div>
+
+        <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-8">
+            <span class="font-serif font-semibold text-base md:text-lg pr-4">Can I choose my artist and city?</span>
+            <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
+          </button>
+          <div id="faq-8" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">Yes. Browse artists by specialty and studio city, then book the specialist whose portfolio matches your vision. Many clients travel between Toronto, Vancouver, and Calgary specifically for a named artist.</p></div></div>
+        </div>
+
+        <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-9">
+            <span class="font-serif font-semibold text-base md:text-lg pr-4">What about aftercare?</span>
+            <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
+          </button>
+          <div id="faq-9" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">You leave with written aftercare instructions and product guidance. General principles: keep the area clean, avoid soaking (pools, baths, ocean) during early healing, don’t pick scabs, and protect from sun once healed. Follow your artist’s specific sheet — styles and placements can differ.</p></div></div>
+        </div>
+
+        <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left" aria-expanded="false" aria-controls="faq-10">
+            <span class="font-serif font-semibold text-base md:text-lg pr-4">Do you do cover-ups and touch-ups?</span>
+            <span class="iconify text-gold-400 text-xl faq-icon" data-icon="lucide:plus"></span>
+          </button>
+          <div id="faq-10" class="faq-content" role="region"><div><p class="text-ink-400 font-light px-5 md:px-6 pb-5 text-[15px]">Yes. Cover-ups require consultation photos and realistic design planning. Touch-ups for work done at Black Maple Ink are discussed case-by-case during healing follow-up. Always book through the online system so records stay attached to your deposit reference.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aftercare strip -->
+    <section class="py-24 md:py-32 bg-ink-900/40" aria-labelledby="aftercare-heading">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Healing</span>
+          <div class="line-gold mt-4 mb-6"></div>
+          <h2 id="aftercare-heading" class="font-serif text-4xl font-semibold mb-6">Protect the Art You <span class="gold-gradient">Invested In</span></h2>
+          <p class="text-ink-300 font-light leading-relaxed mb-6">Great tattoos are a partnership between artist and client. Aftercare is not optional — it is how fine line stays crisp, color stays rich, and blackwork stays solid for decades.</p>
+          <ul class="checklist text-sm text-ink-400 font-light list-none m-0 p-0">
+            <li><span class="check">✓</span><span>Follow the written sheet from your artist first</span></li>
+            <li><span class="check">✓</span><span>Avoid sun and soaking in early weeks</span></li>
+            <li><span class="check">✓</span><span>Moisturize as directed — not over-saturate</span></li>
+            <li><span class="check">✓</span><span>Contact your studio if healing looks unusual</span></li>
+          </ul>
+        </div>
+        <div class="reveal image-frame">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&amp;q=80" alt="Clean care environment symbolizing aftercare and hygiene" class="w-full aspect-[4/3] object-cover img-cover" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="max-w-3xl mx-auto px-5 text-center reveal">
+        <h2 class="font-serif text-4xl font-semibold mb-6">Still Have <span class="gold-gradient">Questions?</span></h2>
+        <p class="text-ink-400 font-light mb-10">Message us or start a booking consultation — we’re happy to clarify before you commit.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="btn-outline-gold px-10 py-4 rounded-full text-[12px] tracking-luxury uppercase">Contact</a>
+          <a href="booking.html" class="btn-gold px-10 py-4 rounded-full text-[12px] tracking-luxury uppercase">Book now</a>
         </div>
       </div>
     </section>
   </main>
   <div id="site-footer"></div>
-  <script src="/js/config.js"></script>
-  <script src="/js/api.js"></script>
-  <script src="/js/components.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/static-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,17 +1,18 @@
 # Black Maple Ink — Production Multisite
 
-Luxury multi-location tattoo studio website with **HTML / JS / Tailwind**, complete **Express + SQLite backend**, **consultation & booking before visit**, and **Paystack deposit payments**.
+Luxury multi-location tattoo studio website with **HTML / JS / Tailwind**, complete **Express + SQLite backend**, **consultation booking before visit**, and **Paystack deposit payments**.
 
 ## Features
 
 - **Multisite**: Toronto, Vancouver, Calgary location pages + shared booking API
-- **SEO-rich**: per-page meta, Open Graph, JSON-LD, `sitemap.xml`, `robots.txt`
-- **Booking before visit**: multi-step wizard (details → studio/service → date/time slots → vision → Paystack deposit)
+- **SEO-rich pages**: multi-section content, Open Graph, JSON-LD, `sitemap.xml`, `robots.txt`
+- **Authenticity-focused UX**: hygiene standards, named artists, testimonials, process, portfolio
+- **Booking before visit**: multi-step wizard (details → studio/service → date/time → vision → Paystack deposit)
 - **Paystack**: initialize transaction, redirect checkout, verify callback, webhook HMAC
-- **Backend**: bookings, availability, consultations, contact, admin API
+- **Static-friendly**: works on GitHub Pages for marketing; API optional via `BMI_CONFIG.apiBase`
 - **Separate files**: CSS, JS modules, multi-page HTML under `public/`
 
-## Quick start
+## Quick start (full app)
 
 ```bash
 # 1. Install dependencies (requires Node 18+)
@@ -31,6 +32,35 @@ Dev with auto-restart:
 ```bash
 npm run dev
 ```
+
+Preview **static only** (no booking API):
+
+```bash
+npx --yes serve public -p 5500
+```
+
+## GitHub Pages (fix for blank site)
+
+The website files are in **`public/`**. GitHub Pages must publish that folder.
+
+1. Repo **Settings → Pages → Source: GitHub Actions**
+2. Push to `master`/`main` — workflow `.github/workflows/deploy-pages.yml` deploys `public/`
+3. Open the Pages URL (e.g. `https://eddkimemia.github.io/blacktat/`)
+
+**Why it was blank before**
+
+- Publishing the **repo root** (no `index.html` there)
+- Absolute paths like `/js/main.js` breaking on `username.github.io/repo-name/`
+
+**Fixes in this repo**
+
+- Relative asset paths + `data-root` for nested location pages
+- Static fallbacks in `public/js/static-data.js`
+- Official deploy workflow for `public/`
+
+Full guide: **[docs/HOSTING.md](docs/HOSTING.md)**
+
+> **Note:** Booking, contact form POST, and admin need a **Node host**. GitHub Pages is static-only.
 
 ## Paystack setup
 
@@ -57,18 +87,20 @@ npm run dev
 ## Project structure
 
 ```
-public/                 # Frontend (static HTML, CSS, JS)
+public/                 # Frontend (static HTML, CSS, JS) ← GitHub Pages root
   index.html
-  booking.html          # Full booking + Paystack deposit
+  booking.html          # Full booking + Paystack deposit (needs API)
   locations/            # Multisite location pages
   css/styles.css
-  js/                   # config, api, components, main, booking
+  js/                   # config, static-data, api, components, main, booking
 server/
   index.js              # Express app
   db.js                 # SQLite schema + seed
   routes/               # API routes
   services/paystack.js
 data/                   # SQLite DB (gitignored)
+docs/HOSTING.md         # Deploy & GitHub Pages guide
+.github/workflows/      # Deploy public/ to GitHub Pages
 ```
 
 ## API overview
@@ -94,14 +126,16 @@ Open `/admin/` and enter `ADMIN_API_KEY` from `.env` (default in dev: `dev-admin
 
 ## Production checklist
 
-- [ ] Set strong `ADMIN_API_KEY`
-- [ ] Use live Paystack keys (`sk_live_…`)
+- [ ] Deploy static site via GitHub Actions **or** serve via Node
+- [ ] For booking: host Node with strong `ADMIN_API_KEY`
+- [ ] Use live Paystack keys (`sk_live_…`) when ready
 - [ ] Set `SITE_URL` and `CORS_ORIGIN` to your domain
 - [ ] Configure Paystack webhook URL
-- [ ] Put process behind HTTPS (nginx, Caddy, or host platform)
+- [ ] Put process behind HTTPS
 - [ ] Run with `NODE_ENV=production` and a process manager (`pm2`, systemd, Docker)
 - [ ] Replace placeholder phone/address if needed
 - [ ] Update `sitemap.xml` domain if different from `blackmapleink.ca`
+- [ ] Hybrid: set `apiBase` in `public/js/config.js` if API is on another host
 
 ## License
 

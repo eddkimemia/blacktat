@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tattoo Portfolio | Black Maple Ink</title>
-  <meta name="description" content="Browse fine line, blackwork, realism, color, and Japanese tattoo portfolio pieces from Black Maple Ink artists.">
+  <title>Tattoo Portfolio | Fine Line, Realism, Blackwork | Black Maple Ink</title>
+  <meta name="description" content="Browse Black Maple Ink portfolio: fine line, blackwork, realism, color, and custom sleeves from artists in Toronto, Vancouver, and Calgary. Book the artist behind the work.">
+  <meta name="keywords" content="Tattoo Portfolio Canada, Fine Line Portfolio, Realism Tattoo Gallery, Blackwork Portfolio, Custom Sleeve Examples">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://blackmapleink.ca/portfolio.html">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Tattoo Portfolio | Black Maple Ink">
+  <meta property="og:description" content="Selected works from Canada's multi-city luxury tattoo collective.">
+  <meta property="og:url" content="https://blackmapleink.ca/portfolio.html">
   <meta name="theme-color" content="#0a0a0a">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/js/tailwind-config.js"></script>
+  <script src="js/tailwind-config.js"></script>
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js" defer></script>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-ink-950 text-white font-sans antialiased" data-page="portfolio" data-root="/">
+<body class="bg-ink-950 text-white font-sans antialiased" data-page="portfolio" data-root="">
   <div id="site-nav"></div>
   <main id="main">
     <header class="page-hero">
@@ -23,9 +27,11 @@
         <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Portfolio</span>
         <div class="line-gold mx-auto mt-4 mb-6"></div>
         <h1 class="font-serif text-4xl md:text-5xl font-semibold">Selected <span class="gold-gradient">Works</span></h1>
+        <p class="mt-5 text-ink-400 font-light max-w-xl mx-auto">A curated look at fine line, blackwork, realism, color, and large-scale custom pieces. Filter by style, then book the specialist whose craft matches your vision.</p>
       </div>
     </header>
-    <section class="pb-24">
+
+    <section class="pb-16" aria-label="Portfolio gallery">
       <div class="max-w-7xl mx-auto px-5 sm:px-6">
         <div class="flex flex-wrap justify-center gap-2 mb-10" role="tablist" aria-label="Portfolio filters">
           <button type="button" class="portfolio-filter px-5 py-2 rounded-full text-[13px] bg-gold-400/10 text-gold-400 border border-gold-400/25 active" data-filter="all" role="tab" aria-selected="true">All</button>
@@ -37,41 +43,114 @@
         </div>
         <div class="masonry">
           <div class="masonry-item portfolio-item" data-category="sleeves">
-            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=1200&amp;q=85" data-alt="Custom sleeve">
-              <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=600&amp;q=80" alt="Custom sleeve" class="w-full object-cover aspect-[3/4] img-cover" loading="lazy">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=1200&amp;q=85" data-alt="Custom full sleeve tattoo composition">
+              <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=600&amp;q=80" alt="Custom sleeve tattoo" class="w-full object-cover aspect-[3/4] img-cover" loading="lazy">
+              <span class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-left opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="block text-xs text-gold-400 tracking-wide2 uppercase">Sleeve</span>
+                <span class="block text-sm font-serif">Custom large-scale narrative</span>
+              </span>
             </button>
           </div>
           <div class="masonry-item portfolio-item" data-category="fineline">
-            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1200&amp;q=85" data-alt="Fine line">
-              <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=600&amp;q=80" alt="Fine line" class="w-full object-cover aspect-square img-cover" loading="lazy">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1200&amp;q=85" data-alt="Fine line botanical tattoo">
+              <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=600&amp;q=80" alt="Fine line botanical tattoo" class="w-full object-cover aspect-square img-cover" loading="lazy">
+              <span class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-left opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="block text-xs text-gold-400 tracking-wide2 uppercase">Fine Line</span>
+                <span class="block text-sm font-serif">Single-needle botanical</span>
+              </span>
             </button>
           </div>
           <div class="masonry-item portfolio-item" data-category="realism">
-            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1590246814883-57c511e3d5c0?w=1200&amp;q=85" data-alt="Portrait realism">
-              <img src="https://images.unsplash.com/photo-1590246814883-57c511e3d5c0?w=600&amp;q=80" alt="Portrait" class="w-full object-cover aspect-[4/5] img-cover" loading="lazy">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1590246814883-57c511e3d5c0?w=1200&amp;q=85" data-alt="Portrait realism tattoo">
+              <img src="https://images.unsplash.com/photo-1590246814883-57c511e3d5c0?w=600&amp;q=80" alt="Portrait realism tattoo" class="w-full object-cover aspect-[4/5] img-cover" loading="lazy">
+              <span class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-left opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="block text-xs text-gold-400 tracking-wide2 uppercase">Realism</span>
+                <span class="block text-sm font-serif">Portrait &amp; value study</span>
+              </span>
             </button>
           </div>
           <div class="masonry-item portfolio-item" data-category="blackwork">
-            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdf93?w=1200&amp;q=85" data-alt="Blackwork">
-              <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdf93?w=600&amp;q=80" alt="Blackwork" class="w-full object-cover aspect-[2/3] img-cover" loading="lazy">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdf93?w=1200&amp;q=85" data-alt="Bold blackwork tattoo">
+              <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdf93?w=600&amp;q=80" alt="Blackwork tattoo detail" class="w-full object-cover aspect-[2/3] img-cover" loading="lazy">
+              <span class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-left opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="block text-xs text-gold-400 tracking-wide2 uppercase">Blackwork</span>
+                <span class="block text-sm font-serif">Bold silhouette &amp; flow</span>
+              </span>
             </button>
           </div>
           <div class="masonry-item portfolio-item" data-category="color">
-            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?w=1200&amp;q=85" data-alt="Color">
-              <img src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?w=600&amp;q=80" alt="Color" class="w-full object-cover aspect-[4/5] img-cover" loading="lazy">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?w=1200&amp;q=85" data-alt="Color realism tattoo">
+              <img src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?w=600&amp;q=80" alt="Color realism tattoo" class="w-full object-cover aspect-[4/5] img-cover" loading="lazy">
+              <span class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-left opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="block text-xs text-gold-400 tracking-wide2 uppercase">Color</span>
+                <span class="block text-sm font-serif">Saturated realism</span>
+              </span>
             </button>
           </div>
           <div class="masonry-item portfolio-item" data-category="fineline">
-            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1200&amp;q=85" data-alt="Minimal fine line">
-              <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=600&amp;q=80" alt="Minimal" class="w-full object-cover aspect-[3/4] img-cover" loading="lazy">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1200&amp;q=85" data-alt="Minimal fine line tattoo">
+              <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=600&amp;q=80" alt="Minimal fine line tattoo" class="w-full object-cover aspect-[3/4] img-cover" loading="lazy">
+              <span class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-left opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="block text-xs text-gold-400 tracking-wide2 uppercase">Fine Line</span>
+                <span class="block text-sm font-serif">Minimal intentional marks</span>
+              </span>
+            </button>
+          </div>
+          <div class="masonry-item portfolio-item" data-category="sleeves">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=1200&amp;q=85" data-alt="Half sleeve custom tattoo">
+              <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=600&amp;q=80" alt="Half sleeve custom tattoo" class="w-full object-cover aspect-square img-cover" loading="lazy">
+              <span class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-left opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="block text-xs text-gold-400 tracking-wide2 uppercase">Sleeve</span>
+                <span class="block text-sm font-serif">Half-sleeve architecture</span>
+              </span>
+            </button>
+          </div>
+          <div class="masonry-item portfolio-item" data-category="realism">
+            <button type="button" class="group relative overflow-hidden rounded-xl w-full lightbox-trigger" data-src="https://images.unsplash.com/photo-1590246814883-57c511e3d5c0?w=1200&amp;q=85" data-alt="Black and grey realism study">
+              <img src="https://images.unsplash.com/photo-1590246814883-57c511e3d5c0?w=600&amp;q=80" alt="Black and grey realism study" class="w-full object-cover aspect-[3/4] img-cover" loading="lazy">
+              <span class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-left opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="block text-xs text-gold-400 tracking-wide2 uppercase">Realism</span>
+                <span class="block text-sm font-serif">Soft gradient mastery</span>
+              </span>
             </button>
           </div>
         </div>
-        <div class="text-center mt-14">
-          <a href="/booking.html" class="btn-gold px-10 py-4 rounded-full text-[12px] tracking-luxury uppercase">Book your piece</a>
+      </div>
+    </section>
+
+    <!-- Authenticity note -->
+    <section class="py-24 md:py-32 bg-ink-900/40" aria-labelledby="portfolio-note">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Proof of Craft</span>
+          <div class="line-gold mt-4 mb-6"></div>
+          <h2 id="portfolio-note" class="font-serif text-4xl font-semibold mb-6">Work That Speaks for <span class="gold-gradient">Itself</span></h2>
+          <p class="text-ink-300 font-light leading-relaxed mb-4">These pieces represent the standards we hold every day: composition that reads at a distance, detail that holds up close, and technical execution that respects healing and longevity.</p>
+          <p class="text-ink-400 font-light leading-relaxed mb-6">When you book, you are not buying a random flash design — you are commissioning a specialist whose published work already proves the result. That is authenticity you can verify before you pay a deposit.</p>
+          <ul class="checklist text-sm text-ink-400 font-light list-none m-0 p-0">
+            <li><span class="check">✓</span><span>Filter by style to shortlist the right artist</span></li>
+            <li><span class="check">✓</span><span>Click images to view larger detail</span></li>
+            <li><span class="check">✓</span><span>Book online with the same specialist in mind</span></li>
+          </ul>
+        </div>
+        <div class="reveal grid grid-cols-2 gap-3">
+          <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=500&amp;q=80" alt="Portfolio detail fine line" class="rounded-xl aspect-square object-cover img-cover" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?w=500&amp;q=80" alt="Portfolio detail color" class="rounded-xl aspect-square object-cover img-cover mt-6" loading="lazy">
         </div>
       </div>
     </section>
+
+    <section class="py-24">
+      <div class="max-w-3xl mx-auto px-5 text-center reveal">
+        <h2 class="font-serif text-4xl font-semibold mb-6">Ready for Your <span class="gold-gradient">Piece</span>?</h2>
+        <p class="text-ink-400 font-light mb-10">Book consultation, choose your artist and studio, and secure your deposit online.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="booking.html" class="btn-gold px-10 py-4 rounded-full text-[12px] tracking-luxury uppercase">Book your piece</a>
+          <a href="artists.html" class="btn-outline-gold px-10 py-4 rounded-full text-[12px] tracking-luxury uppercase">Meet artists</a>
+        </div>
+      </div>
+    </section>
+
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" hidden>
       <button type="button" id="lightboxClose" class="absolute top-6 right-6 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white z-10" aria-label="Close">
         <span class="iconify text-xl" data-icon="lucide:x"></span>
@@ -80,9 +159,10 @@
     </div>
   </main>
   <div id="site-footer"></div>
-  <script src="/js/config.js"></script>
-  <script src="/js/api.js"></script>
-  <script src="/js/components.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/static-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

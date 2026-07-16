@@ -4,18 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tattoo Artists | Black Maple Ink Toronto, Vancouver, Calgary</title>
-  <meta name="description" content="Meet the Black Maple Ink artists — specialists in realism, fine line, Japanese, color, and geometric work across Toronto, Vancouver, and Calgary.">
+  <meta name="description" content="Meet Black Maple Ink artists — Marcus Chen, Sofia Reyes, Kai Tanaka, and Elena Voss. Specialists in realism, fine line, Japanese, color, and geometric work. Book by name with online deposit.">
+  <meta name="keywords" content="Tattoo Artists Toronto, Tattoo Artists Vancouver, Tattoo Artists Calgary, Realism Tattoo Artist, Fine Line Artist, Japanese Tattoo Artist Canada">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://blackmapleink.ca/artists.html">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Tattoo Artists | Black Maple Ink">
+  <meta property="og:description" content="Book specialists by name across Toronto, Vancouver, and Calgary.">
+  <meta property="og:url" content="https://blackmapleink.ca/artists.html">
   <meta name="theme-color" content="#0a0a0a">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/js/tailwind-config.js"></script>
+  <script src="js/tailwind-config.js"></script>
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js" defer></script>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Black Maple Ink Artists",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Marcus Chen","description":"Realism & Large-Scale — Toronto"},
+      {"@type":"ListItem","position":2,"name":"Sofia Reyes","description":"Color Realism — Toronto"},
+      {"@type":"ListItem","position":3,"name":"Kai Tanaka","description":"Japanese & Blackwork — Vancouver"},
+      {"@type":"ListItem","position":4,"name":"Elena Voss","description":"Black & Grey & Geometric — Calgary"}
+    ]
+  }
+  </script>
 </head>
-<body class="bg-ink-950 text-white font-sans antialiased" data-page="artists" data-root="/">
+<body class="bg-ink-950 text-white font-sans antialiased" data-page="artists" data-root="">
   <div id="site-nav"></div>
   <main id="main">
     <header class="page-hero">
@@ -23,45 +40,120 @@
         <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">The Collective</span>
         <div class="line-gold mx-auto mt-4 mb-6"></div>
         <h1 class="font-serif text-4xl md:text-5xl font-semibold">Our <span class="gold-gradient">Artists</span></h1>
-        <p class="mt-5 text-ink-400 font-light">Specialists you can book by name — deposit secured before your session.</p>
+        <p class="mt-5 text-ink-400 font-light max-w-xl mx-auto">Specialists you can book by name. Review their craft, choose the studio city, and secure a deposit before your session — no anonymous roulette.</p>
       </div>
     </header>
-    <section class="pb-24">
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="artistsGrid">
-        <p class="text-ink-500 col-span-full text-center">Loading artists…</p>
+
+    <!-- Why specialists -->
+    <section class="pb-16" aria-labelledby="specialist-heading">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6">
+        <div class="reveal glass-card-gold rounded-2xl p-8 md:p-10 grid md:grid-cols-3 gap-8">
+          <div>
+            <h2 id="specialist-heading" class="font-serif text-xl font-semibold mb-3">Portfolio-matched booking</h2>
+            <p class="text-sm text-ink-500 font-light">Every artist is known for a lane of excellence. We help you match vision to proven skill — not luck of the draw.</p>
+          </div>
+          <div>
+            <h2 class="font-serif text-xl font-semibold mb-3">Resident at one studio</h2>
+            <p class="text-sm text-ink-500 font-light">Artists keep consistent calendars in Toronto, Vancouver, or Calgary so availability and standards stay reliable.</p>
+          </div>
+          <div>
+            <h2 class="font-serif text-xl font-semibold mb-3">Deposit locks the chair</h2>
+            <p class="text-sm text-ink-500 font-light">Online Paystack deposit confirms the specialist’s time and funds custom design work before you arrive.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artists grid -->
+    <section class="pb-24" aria-labelledby="artists-grid-heading">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6">
+        <h2 id="artists-grid-heading" class="sr-only">Artist profiles</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="artistsGrid">
+          <!-- Static fallback rendered immediately; API may enhance -->
+        </div>
+      </div>
+    </section>
+
+    <!-- How to choose -->
+    <section class="py-24 md:py-32 bg-ink-900/40" aria-labelledby="choose-heading">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal image-frame">
+          <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=900&amp;q=80" alt="Detailed tattoo artwork representing artist craftsmanship" class="w-full aspect-[4/5] object-cover img-cover" loading="lazy" width="900" height="1125">
+        </div>
+        <div class="reveal">
+          <span class="text-[11px] text-gold-400 tracking-luxury uppercase font-medium">Guidance</span>
+          <div class="line-gold mt-4 mb-6"></div>
+          <h2 id="choose-heading" class="font-serif text-4xl font-semibold mb-6">How to Choose the <span class="gold-gradient">Right Artist</span></h2>
+          <ul class="checklist text-sm text-ink-400 font-light list-none m-0 p-0">
+            <li><span class="check">✓</span><span><strong class="text-ink-200">Study healed work</strong> — look for clarity, contrast, and composition, not only fresh photos.</span></li>
+            <li><span class="check">✓</span><span><strong class="text-ink-200">Match specialty</strong> — realism, color, Japanese, geometric each demand different mastery.</span></li>
+            <li><span class="check">✓</span><span><strong class="text-ink-200">Consider city &amp; travel</strong> — great art is worth a trip; deposit locks the date either way.</span></li>
+            <li><span class="check">✓</span><span><strong class="text-ink-200">Share honest references</strong> — during booking, describe size, placement, and inspiration.</span></li>
+          </ul>
+          <a href="portfolio.html" class="inline-flex mt-8 text-sm text-gold-400 tracking-wide2 uppercase">Browse portfolio →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guest / standards -->
+    <section class="py-24 md:py-32">
+      <div class="max-w-3xl mx-auto px-5 text-center reveal">
+        <h2 class="font-serif text-4xl font-semibold mb-6">Every Artist Meets One <span class="gold-gradient">Standard</span></h2>
+        <p class="text-ink-400 font-light mb-8 leading-relaxed">Regardless of city or style, Black Maple Ink artists commit to private-suite etiquette, sterile workflow, clear communication, and designs built for longevity. That is non-negotiable brand authenticity — not marketing language.</p>
+        <a href="booking.html" class="btn-gold px-10 py-4 rounded-full text-[12px] tracking-luxury uppercase">Book an Artist</a>
       </div>
     </section>
   </main>
   <div id="site-footer"></div>
-  <script src="/js/config.js"></script>
-  <script src="/js/api.js"></script>
-  <script src="/js/components.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/static-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
   <script>
-    (async function () {
+    (function () {
       const grid = document.getElementById('artistsGrid');
-      if (!grid || !window.BMI_API) return;
-      try {
-        const res = await BMI_API.getConfig();
-        const artists = res.data.artists || [];
-        const sites = res.data.sites || [];
-        const siteMap = Object.fromEntries(sites.map((s) => [s.id, s]));
+      if (!grid) return;
+
+      const root = document.body.dataset.root || '';
+      function render(artists, sites) {
+        const siteMap = Object.fromEntries((sites || []).map((s) => [s.id, s]));
         grid.innerHTML = artists.map((a) => {
-          const site = siteMap[a.siteId];
+          const site = siteMap[a.siteId] || siteMap[a.site_id];
+          const city = a.city || (site && (site.city || site.name)) || 'Studio';
+          const slug = a.slug;
+          const siteSlug = site && site.slug ? site.slug : '';
+          const img = a.imageUrl || a.image_url || '';
+          const name = a.name;
+          const specialty = a.specialty || '';
+          const bio = a.bio || '';
           return `
-            <article class="reveal glass-card rounded-2xl overflow-hidden group">
-              <img src="${a.imageUrl || ''}" alt="${a.name}" class="w-full aspect-[5/6] object-cover group-hover:scale-105 transition-transform duration-700 img-cover" loading="lazy" width="500" height="600">
-              <div class="p-5">
-                <h2 class="font-serif text-lg font-semibold">${a.name}</h2>
-                <p class="text-[11px] text-gold-400 tracking-wide2 uppercase mt-1">${a.specialty}</p>
-                <p class="text-xs text-ink-500 mt-2">${site ? site.city : 'All studios'}</p>
-                <a href="/booking.html?artist=${encodeURIComponent(a.slug)}${site ? '&site=' + site.slug : ''}" class="inline-block mt-4 text-[11px] text-gold-400 tracking-wide2 uppercase hover:text-gold-300">Book →</a>
+            <article class="reveal glass-card rounded-2xl overflow-hidden group flex flex-col">
+              <img src="${img}" alt="${name} — ${specialty} tattoo artist at Black Maple Ink" class="w-full aspect-[5/6] object-cover group-hover:scale-105 transition-transform duration-700 img-cover" loading="lazy" width="500" height="600">
+              <div class="p-5 flex flex-col flex-1">
+                <h2 class="font-serif text-lg font-semibold">${name}</h2>
+                <p class="text-[11px] text-gold-400 tracking-wide2 uppercase mt-1">${specialty}</p>
+                <p class="text-xs text-ink-500 mt-2">${city}</p>
+                <p class="text-xs text-ink-500 font-light mt-3 leading-relaxed flex-1">${bio}</p>
+                <a href="${root}booking.html?artist=${encodeURIComponent(slug)}${siteSlug ? '&site=' + siteSlug : ''}" class="inline-block mt-4 text-[11px] text-gold-400 tracking-wide2 uppercase hover:text-gold-300">Book ${name.split(' ')[0]} →</a>
               </div>
             </article>`;
         }).join('');
-        document.querySelectorAll('.reveal').forEach((el) => el.classList.add('active'));
-      } catch (e) {
-        grid.innerHTML = '<p class="text-red-400 col-span-full text-center">Could not load artists.</p>';
+        document.querySelectorAll('#artistsGrid .reveal').forEach((el) => el.classList.add('active'));
+      }
+
+      const staticArtists = (window.BMI_STATIC && BMI_STATIC.artists) || [];
+      const staticSites = (window.BMI_STATIC && BMI_STATIC.sites) || [];
+      render(staticArtists, staticSites);
+
+      if (window.BMI_API) {
+        BMI_API.getConfig()
+          .then((res) => {
+            const artists = (res.data && res.data.artists) || [];
+            const sites = (res.data && res.data.sites) || [];
+            if (artists.length) render(artists, sites);
+          })
+          .catch(function () { /* keep static */ });
       }
     })();
   </script>
